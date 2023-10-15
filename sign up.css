@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.cont{
+    width: 100%;
+    display: flex;
+}
+.d1, .d2{
+    flex: 1;
+}
+.d1 p{
+    color: #fff;
+    margin-right: 100px;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center; 
+    background:#fff;
+}
+.container{
+    max-width: 600px;
+    max-height: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin-left: 0px;
+    justify-content: center;
+}
+.container .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.container .title::before{
+    content: '  ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: #fff;
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    margin: 8px 0 4px 0;
+    width: calc(100% / 2 - 20px);
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 10px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.input-box .details{
+    font-size: 12px;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #9b59b6;
+    font-weight: 500;
+}
+.cb1{
+    margin-top: 15px;
+    font-size: 12px;
+}
+.cb2{
+    
+    font-size: 12px;
+}
+.cb2 span{
+    color: #459EFF;
+}
+#Dropdown{
+    box-sizing: 20px;
+}
+select {
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+  }
+  select option {
+    background-color: #fff;
+    color: #333;
+    font-size: 10px;
+  }
+.dd{
+    font-size: 12px;
+}
+.dd select{
+    font-size: 10px;
+    margin-top: 20px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #007AFF;
+    padding: 6px 60px 6px 60px;
+    font-size: 16px;
+   background-color: #007AFF;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 20px;
+    border-radius: 4px;
+    padding-top: 10px;
+}
+.g-sib{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 10px;
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    background-color: #2D3748;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+    transition: background-color .218s, border-coor .218s, box-shadow .218s;
+}
+.g-sib1{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 10px;
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    background-color: #007AFF;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+    transition: background-color .218s, border-coor .218s, box-shadow .218s;
+}
+.g-sib:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 3px 3px rgba(66, 133 244, .3);
+    box-shadow: 0 0 3px 3px rgba(66, 133 244, .3);
+}
+.g-sib1:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 3px 3px rgba(66, 133 244, .3);
+    box-shadow: 0 0 3px 3px rgba(66, 133 244, .3);
+}
+.g-sib:active{
+    background-color: #2D3748;
+    transition: background-color .2s;
+}
+.g-sib img{
+    width: 18px;
+    height: 18px;
+}
+.g-sib .lw{
+    padding: 15px;
+    background: #fff;
+    width: 48px;
+    height: 100%;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.g-sib .tc{
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: .21px;
+    font-size: 16px;
+    line-height: 48px;
+    vertical-align: top;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+}
+.btn{
+    display: flex;
+    
+}
+.d1{
+    text-align: center;
+    margin-top: 150px;
+}
+body {
+    /* Set the background image and configure its properties */
+    background-image: url('images/WhatsApp\ Image\ 2023-10-12\ at\ 8.46.31\ PM.jpeg');
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+    background-attachment: fixed; /* Optional: Fixed background */
+
+    /* Add any other desired styling for the body */
+    margin: 0;
+    padding: 0;
+}
+
+#d1{
+    /* Styling for the first div */
+    background-color: rgba(255, 0, 0, 0.5); /* Red background with 50% opacity */
+    width: 50%;
+    height: 200px;
+}
+
+#d2 {
+    /* Styling for the second div */
+    background-color: rgba(0, 0, 255, 0.5); /* Blue background with 50% opacity */
+    width: 50%;
+    height: 200px;
+}
