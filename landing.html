@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>IMS</title>
+        <link rel="stylesheet" href="landing.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <section class="header">
+        <nav>
+            <a href=""><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <div id="x"><i class="fa fa-times" onclick="hideMenu()"></i></div>
+                
+                <ul>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <a href="" class="hero-btn2">Get Started</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars"onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1 id="h1"><span>I</span>ncubation <span>M</span>anagement <span>S</span>ystem</h1>
+            <h1>Elevate projects through seamless<br> management and team synergy</h1>
+            <p>Effortlessly enhance project management, while leveraging team synergy for <br> unparalleled collaboration and outcomes
+            </p>
+            <a href="" class="hero-btn">Get Started</a>
+            <a href="" class="hero-btn1">Book Demo</a>
+        </div>
+
+    </section>
+
+
+<!--------JavaScript for Toggle Menu------->
+<script>
+
+    var navLinks = document.getElementById("navLinks")
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+
+</script>
+    </body>
+</html>
