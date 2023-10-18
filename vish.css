@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  body, h1, .note-box, .attendance-row, .attendance-cell, button, input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight:bolder;
+    font-weight: lighter;
+  }
+  
+  input {
+    border: none;
+  }
+  
+  .attendance-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-bottom: 1px solid #000; /* Display row line */
+    padding: 16px 0;
+  }
+  
+  .attendance-cell {
+    flex: 1;
+    text-align: center;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .attendance-cell:last-child {
+    border-right: none; /* Remove the right border on the last cell */
+  }
+
+
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-bottom: 1px solid #7F2195; /* Display row line */
+    padding: 10px 0;
+  }
+  
+  .title-cell {
+    flex: 1;
+    text-align: center;
+    color:#7F2195;
+    font-weight:800;
+    font-size: 17px;
+  }
+  
+  .title-cell:last-child {
+    border-right: none; /* Remove the right border on the last cell */
+  }
+  
+  
+  .month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .arrow {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #7F2195;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .month-title {
+    background-color: transparent;
+    color: #7F2195;
+    font-size: 20px;
+  }
+  
+  .note-box {
+    background-color: transparent;
+    padding: 10px;
+    border: 1.5px solid #7F2195;
+    margin: 20px 0;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .note-box input[type="text"] {
+    flex: 1;
+    padding: 7px;
+    border: none;
+    outline: none;
+  }
+  
+  .note-box button {
+    background-color: #7F2195;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .outer-container {
+    margin: 1cm;
+    width: calc(100% - 2cm);
+    border: 1px dotted #7F2195;
+    text-align: center;
+    border-radius: 15px;
+  }
+  
+  .page-container {
+    padding: 20px;
+  }
+
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  body, h1, .container, .page-title, .search-button, .settings-button, .menu-button, input, .search-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: lighter;
+  }
+  
+  .container {  
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .page-title {
+    font-weight:bold;
+    font-family: 'Poppins', sans-serif;
+    font-size:30px;
+    color: #7F2195;
+    text-align:center;
+    text-indent: 20px;
+    margin: 20px 0;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 325px;
+    padding: 1px;
+    border: 2px solid #7F2195;
+    border-radius: 30px;
+
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .search-box input {
+    border: none;
+    flex: 1;
+    max-width: 200px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .search-icon {
+    color: #7F2195; /* Color for the search icon */
+    font-size: 50px; /* Adjust the size of the icon */
+    padding: 20px;
+    
+  }
+  
+  .menu-button, .settings-button {
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+  }
+  
