@@ -8,49 +8,215 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://kit.fontawesome.com/ba5b6983d4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="navbar">
+        <p class="brand">IMS</p>
+        <div class="menuitems">
+            <p class="menu1">Project</p>
+            <p class="menu2">Expenses</p>
+            <p class="menu3">Attendance</p>
+        </div>
 
+        <!-- <p class="brand">I<span class="brands">ncubation</span> M<span class="brands">anagment</span> S<span class="brands">ystem</span></p> -->
+        <div class="icondiv"><i class="fas fa-user-circle profile-icon profile-icon"></i></div>
     </div>
-    <div class="navbar1">
 
+    <div class="navbar1">
     </div>
     <div class="top-container">
         <div class="projects">
             <div class="projects-title">
-                <h1 class="title-font">List of projects</h1>
+                <h1 class="title-font">List of projects <span class="plus" id="projectPlus">&plus;</span></h1>
             </div>
+            <div class="img-div">
+                <img class="image" src="/IMS/norecords.jpg" alt="">
+
+            </div>
+            <div class="req-title">
+                <h1 class="records">No records found </h1>
+            </div>
+
         </div>
         <div class="attendance">
             <div class="attendance-title">
-                <h1 class="title-font">Attendance</h1>
+                <h1 class="title-font">Expenses <span class="plus" id="expensesPlus">&plus;</span></h1>
+            </div>
+            <div class="img-div">
+                <img class="image" src="/IMS/norecords1.jpg" alt="">
+
+            </div>
+            <div class="req-title">
+                <h1 class="records">No records found </h1>
             </div>
         </div>
+
     </div>
     <div class="middle-container">
         <div class="equipments">
             <div class="equipments-title">
-                <h1 class="title-font">List of equipments</h1>
+                <h1 class="title-font">List of equipments <span class="plus" id="equipmentsPlus">&plus;</span></h1>
+            </div>
+            <div class="img-div">
+                <img class="image" src="/IMS/norecords2.jpg" alt="">
+
+            </div>
+            <div class="req-title">
+                <h1 class="records">No records found </h1>
             </div>
         </div>
         <div class="achievements">
             <div class="acheievements-title">
-                <h1 class="title-font">List of achievements</h1>
+                <h1 class="title-font">List of achievements <span class="plus" id="achievementsPlus">&plus;</span> </h1>
             </div>
+            <div class="img-div">
+                <img class="image" src="/IMS/norecords3.jpg" alt="">
+
+            </div>
+            <div class="req-title">
+                <h1 class="records">No records found </h1>
+            </div>
+
+
         </div>
     </div>
     <div class="bottom-container">
-        <div class="request">
-            <div class="request-title">
-                <h1 class="title-font">Request page</h1>
-            </div>
+        <div class="div5">
+            <select id="categoryDropdown" onchange="handleDropdownChange()">
+                <option value="projects">Request Meeting</option>
+                <option value="expenses">Request Leave</option>
+                <option value="equipments">Request Components</option>
+                <option value="achievements">Request Others</option>
+            </select>
+
         </div>
-        <div class="div6"></div>
+        <div class="div6">
+
+        </div>
+
     </div>
 
+    <div class="dialog-overlay" id="projectDialog">
+        <div class="dialog-box">
+            <input type="text" placeholder="Enter Project Name">
+            <button class="cancelbutton" onclick="closeDialog('projectDialog')">Cancel</button>
+            <button class="submitbutton" onclick="submitDialog('Projects')">Submit</button>
+        </div>
+    </div>
+
+    <!-- Dialog for Expenses -->
+    <div class="dialog-overlay" id="expensesDialog">
+        <div class="dialog-box">
+            <input type="text" placeholder="Enter something...">
+            <button class="cancelbutton" onclick="closeDialog('expensesDialog')">Cancel</button>
+            <button class="submitbutton" onclick="submitDialog('Expenses')">Submit</button>
+        </div>
+    </div>
+
+    <!-- Dialog for Equipments -->
+    <div class="dialog-overlay" id="equipmentsDialog">
+        <div class="dialog-box">
+            <input type="text" placeholder="Enter Equipment Name">
+            <button class="cancelbutton" onclick="closeDialog('equipmentsDialog')">Cancel</button>
+            <button class="submitbutton" onclick="submitDialog('Equipments')">Submit</button>
+        </div>
+    </div>
+
+    <!-- Dialog for Achievements -->
+    <div class="dialog-overlay" id="achievementsDialog">
+        <div class="dialog-box">
+            <input type="text" placeholder="Enter Your Achievement">
+            <button class="cancelbutton" onclick="closeDialog('achievementsDialog')">Cancel</button>
+            <button class="submitbutton" onclick="submitDialog('Achievements')">Submit</button>
+        </div>
+    </div>
+
+
+    <!-- <div id="dialog" class="dialog">
+
+
+        <input type="text" id="projectName" placeholder="Enter Project Title">
+        <br>
+
+        <button class="buttons submitbutton" ionclick="submitProject()">Submit</button>
+        <button class="buttons cancelbutton" onclick="closeDialog()">Cancel</button>
+    </div> -->
+
+
+    <script>
+        /* function openDialog() {
+            document.getElementById('dialog').style.display = 'block';
+        }
+
+        function submitProject() {
+
+
+            //you can customize this part
+
+            closeDialog();
+        }
+
+        function closeDialog() {
+            document.getElementById('dialog').style.display = 'none';
+        }
+
+        document.getElementById('openDialog').addEventListener('click', openDialog);
+
+        function showDialog() {
+            document.getElementById('dialog').style.display = 'block';
+        }
+
+        function hideDialog() {
+            document.getElementById('dialog').style.display = 'none';
+        } */
+        function openDialog(dialogId) {
+            document.getElementById(dialogId).style.display = 'flex';
+        }
+
+        function closeDialog(dialogId) {
+            document.getElementById(dialogId).style.display = 'none';
+
+        }
+
+        function submitDialog(category) {
+            const inputValue = document.querySelector(`#${category.toLowerCase()}Dialog input`).value;
+            alert(`Submitted ${category} with value: ${inputValue}`);
+            closeDialog(`${category.toLowerCase()}Dialog`);
+        }
+
+        // Add click event listeners to plus icons
+        document.getElementById('projectPlus').addEventListener('click', function () {
+            openDialog('projectDialog');
+        });
+
+        document.getElementById('expensesPlus').addEventListener('click', function () {
+            openDialog('expensesDialog');
+        });
+
+        document.getElementById('equipmentsPlus').addEventListener('click', function () {
+            openDialog('equipmentsDialog');
+        });
+
+        document.getElementById('achievementsPlus').addEventListener('click', function () {
+            openDialog('achievementsDialog');
+        });
+
+
+
+        function handleDropdownChange() {
+            // Get the selected value from the dropdown
+            const selectedValue = document.getElementById('categoryDropdown').value;
+
+            // Display the selected value
+            document.getElementById('selectedCategory').innerText = `Selected Category: ${selectedValue}`;
+
+            // You can perform additional actions based on the selected value here
+        }
+    </script>
 
 </body>
 
