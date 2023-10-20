@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar1">
+        <h1 class="title">Project title</h1>
+    </div>
+    <div class="top-container">
+        <div class="projects">
+            <div class="projects-title">
+                <h1 class="title-font">Members List</h1>
+            </div>
+        </div>
+        <% if (userRole === 'admin') { %>
+        <div class="attendance">
+            <div class="attendance-title">
+                <h1 class="title-font">Components List</h1>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <div class="middle-container">
+        <div class="equipments">
+            <div class="equipments-title">
+                <h1 class="title-font">Project Status</h1>
+            </div>
+        </div>
+        <div class="achievements">
+            <div class="acheievements-title">
+                <h1 class="title-font">Achievements</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS</title>
+    <link rel="stylesheet" href="sign up.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="cont">
+        <div class="d1">
+            <p>"An incubation management system <br> serves as the nurturing soil for budding <br> endeavors, providing the essential <br> nutrients of guidance, resources, and <br> mentorship, enabling them to flourish into <br> successful ventures."</p>
+        </div>
+        <div class="d2">
+            <div class="container">
+                <div class="title">Create account</div>
+                <!-- Form for data submission with Axios -->
+                <form id="userForm">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">First Name</span>
+                            <input type="text" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Last Name</span>
+                            <input type="text" name="lastName" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Date of Birth(mm/dd/yy)</span>
+                            <input type="text" name="dob" placeholder="Enter your number" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                    <div class="dd">
+                        <label for="Dropdown">Designation</label>
+                        <select id="Dropdown" name="designation">
+                            <option value="Manager">Manager</option>
+                            <option value="R&D Senior Executive">R&D Senior Executive</option>
+                            <option value="R&D Executive">R&D Executive</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="cb1">
+                        <input type="checkbox" id="rememberMe" name="rememberMe" value="true">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="cb2">
+                        <input type="checkbox" id="agreeToTerms" name="agreeToTerms" value="true">
+                        <label for="agreeToTerms">I agree to all the <span>Terms</span> and <span>Privacy policy</span></label>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="hero-btn" id="btn">Create Account</button>
+                        <a href="#" class="btn2">
+                            <div class="g-sib">
+                                <div class="cw">
+                                    <div class="lw">
+                                        <img src="images/google-icon.png.svg" alt="">
+                                    </div>
+                                    <span class="tc">
+                                        <span>Continue with Google</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to send user data to the server using Axios
+        function sendUserData(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const form = document.getElementById('userForm');
+            const formData = new FormData(form);
+            const userData = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            dob: formData.get('dob'),
+            password: formData.get('password'),
+            confirmPassword: formData.get('confirmPassword'),
+            designation: formData.get('designation'),
+            rememberMe: formData.get('rememberMe') === 'true', // Convert the string to a boolean
+            agreeToTerms: formData.get('agreeToTerms') === 'true', // Convert the string to a boolean
+        };
+            console.log(userData)
+
+            axios.post('http://localhost:3000/newUser', userData)
+                .then(response => {
+                    console.log('User data sent successfully:', response.data);
+                    form.reset();
+                    // You can handle the response or redirect the user as needed
+                })
+                .catch(error => {
+                    console.error('Error sending user data:', error);
+                    // Handle the error, show an error message, etc.
+                });
+        }
+
+        // Add a submit event listener to the form
+        const userForm = document.getElementById('userForm');
+        userForm.addEventListener('submit', sendUserData);
+    </script>
+</body>
+</html>

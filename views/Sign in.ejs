@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="Sign in.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="d1">
+            <p>"An incubation management system <br> serves as the nurturing soil for budding <br> endeavors, providing the essential <br> nutrients of guidance, resources, and <br> mentorship, enabling them to flourish into <br> successful ventures."</p>
+        </div>
+        <div class="d2">
+            <div class="container">
+                <div class="title">Sign In</div>
+                <form id="signin-container">
+                    <div class="user-details">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+
+                        <button type="submit">Sign In</button>
+                        <div class="cb2">
+                            <label for="mcb">Don't have an account? <a href="signup.html"><span>Sign Up</span></a></label>
+                        </div>
+                    </div>
+                    <div class="line-container">
+                        <hr>
+                        <div class="words"> or Sign in with </div>
+                        <hr>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn2">
+                            <div class="g-sib">
+                                <div class="cw">
+                                    <div class="lw">
+                                        <img src="images/google-icon.png.svg" alt="">
+                                    </div>
+                                    <span class="tc">
+                                        <span>Continue with google</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signInForm = document.getElementById('signin-container');
+            signInForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Send a POST request to your Express.js server for authentication
+                try {
+                    const response = await fetch('http://localhost:3000/auth', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email, password }),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        const designation = data.designation;
+                        // Authentication was successful
+                        alert('Authentication successful. You are logged in as '+designation );
+                        console.log(data.token)
+                    } else {
+                        alert('Authentication failed. Check your email and password.');
+                    }
+                    signInForm.reset();
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while signing in.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
