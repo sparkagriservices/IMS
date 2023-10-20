@@ -232,3 +232,32 @@ body {
 
 /* Add any additional styling for your .btn and its child elements here */
 
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    body{
+        background-image: none;
+    }
+    .cont {
+        flex-direction: column; /* Stack divs vertically on smaller screens */
+    }
+
+    .d1 p {
+        margin-right: 0;
+        display: none;
+    }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .container .title {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 20px; /* Decrease padding for smaller screens */
+    }
+
+    .d1 p {
+        text-align: center;
+    }
+}

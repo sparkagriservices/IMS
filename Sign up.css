@@ -105,8 +105,12 @@ select {
     color: #333;
     font-size: 10px;
   }
+  option :hover{
+    background: red;
+  }
 .dd{
     font-size: 12px;
+    
 }
 .dd select{
     font-size: 10px;
@@ -230,4 +234,90 @@ body {
     background-color: rgba(0, 0, 255, 0.5); /* Blue background with 50% opacity */
     width: 50%;
     height: 200px;
+}
+/* Add this CSS at the end of your existing code */
+
+/* Media query for screens smaller than 768px (e.g. tablets) */
+@media (max-width: 768px) {
+    body{
+        background-image: none;
+    }
+    .cont {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .d1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 90%;
+        text-align: center; /* Center the content */
+    }
+
+    .user-details .input-box {
+        width: 100%;
+    }
+
+    .user-details .input-box input {
+        font-size: 14px;
+    }
+
+    .hero-btn, .btn2 {
+        margin-top: 10px;
+    }
+
+    .g-sib, .g-sib1 {
+        width: 100%;
+        font-size: 14px;
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Media query for screens smaller than 480px (e.g. mobile devices) */
+@media (max-width: 480px) {
+
+    ::placeholder{
+        transform: scale(0.8);
+    }
+    .container {
+        padding: 15px;
+        max-width: 90%;
+        text-align: center; /* Center the content */
+    }
+
+    .btn{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        transform: scale(0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .d1 p {
+        margin-right: 0;
+    }
+
+    .user-details .input-box {
+        width: 100%;
+    }
+
+    .user-details .input-box input {
+        font-size: 14px;
+    }
+
+    .hero-btn, .btn2 {
+        margin-top: 10px;
+    }
+
+    .g-sib, .g-sib1 {
+        width: 100%;
+        font-size: 14px;
+        text-align: center; /* Center the text */
+    }
 }
