@@ -12,8 +12,6 @@
     background: #9a56a9;
 }
 
-
-
 .body {
     display: flex;
     align-items: center;
@@ -21,30 +19,59 @@
     background-color: black;
     margin: auto;
     height: 100vh;
+}
 
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .navbar {
-    height: 10vh;
+    height: 100vh;
     background-color: #522B5B;
-    width: 100%;
-    border-bottom: 1px solid gray;
+    width: 15%;
+    border-right: 1px solid gray;
     box-shadow: 0px 10px 7px -10px #111;
     position: fixed;
     top: 0;
     z-index: 1000;
-    align-items: center;
     display: flex;
-    padding-left: 2%;
-
+    flex-direction: column;
+    padding: 2%;
 }
 
-.navbar1 {
-    height: 25vh;
-    background-color: white;
+.brand {
+    margin: 0;
+    font-size: 24px;
+    color: white;
 }
 
+.menuitems {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
+.menuitems p {
+    margin: 10px 0;
+    cursor: pointer;
+    color: white;
+}
+
+.icondiv {
+    font-size: 24px;
+    margin-top: auto;
+}
+
+.content {
+    margin-left: 15%;
+    width: 85%; /* Adjust the width to fit the remaining space */
+    background-color: #f2f2f2; /* Set a background color for the content */
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
 
 .brand {
     font-size: 45px;
@@ -57,6 +84,8 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bolder;
 }
+
+/* ... (rest of your CSS) */
 
 .brands {
     background: linear-gradient(40deg, #fdbb2d, #b21f1f);
@@ -116,16 +145,20 @@
 .top-container {
     height: 80vh;
     background-color: white;
+    margin-left: 300px;
+    margin-top: 100px;
 }
 
 .middle-container {
     height: 80vh;
     background-color: white;
+    margin-left: 300px;
 }
 
 .bottom-container {
     height: 30vh;
     background-color: white;
+    margin-left: 300px;
 }
 
 .projects,
@@ -407,7 +440,7 @@ option:hover {
 
 
 
-/*projects page*/
+
 
 .title {
     font-size: 50px;
@@ -419,7 +452,7 @@ option:hover {
 }
 
 
-/*profile page*/
+
 .navbar-profile {
     height: 10vh;
     background-color: white;
@@ -503,7 +536,7 @@ form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 80%;
     width: 100%;
 }
