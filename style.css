@@ -59,14 +59,17 @@ body {
 }
 
 .icondiv {
-    font-size: 24px;
+    font-size: 23px;
     margin-top: auto;
+    overflow-x: hidden;
 }
 
 .content {
     margin-left: 15%;
-    width: 85%; /* Adjust the width to fit the remaining space */
-    background-color: #f2f2f2; /* Set a background color for the content */
+    width: 85%;
+    /* Adjust the width to fit the remaining space */
+    background-color: #f2f2f2;
+    /* Set a background color for the content */
     padding: 20px;
     height: 100vh;
     box-sizing: border-box;
